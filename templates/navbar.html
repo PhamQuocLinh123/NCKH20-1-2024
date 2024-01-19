@@ -1,0 +1,22 @@
+<!-- navbar.html -->
+
+<nav class="navbar navbar-expand-lg py-2 navbar-dark bg-dark shadow-sm">
+    <div class="container">
+        <a href="#" class="navbar-brand">
+            <!-- Logo Image -->
+            <img src="{{ url_for('static', filename='img/logoql.png') }}" width="45" alt="" class="d-inline-block align-middle mr-2">
+            <!-- Logo Text -->
+            <span class="font-weight-bold" style="text-align: center">HỆ THỐNG XÁC ĐỊNH DANH TÍNH VÀ ĐẾM SỐ NGƯỜI </span>
+        </a>
+
+        {% if 'user_id' in session %}
+            <!-- Display greeting message with username if user is logged in -->
+            <span class="navbar-text text-light mr-3">
+                Hello, {{ session['username'] }}!
+            </span>
+
+            <!-- Display logout button if user is logged in -->
+            <a href="{{ url_for('logout') }}" class="btn btn-outline-light">Logout</a>
+        {% endif %}
+    </div>
+</nav>
